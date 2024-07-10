@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>List in React</title>
+    <script src="https://unpkg.com/react@18/umd/react.development.js"></script>
+    <script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+  </head>
+  <body>
+    <div id="root"></div>
+    <script>
+      var containerOl = React.createElement(
+        "ol",
+        {
+          type: "a",
+          id: "users",
+          style: {
+            color: "green",
+            backgroundColor: "black",
+            padding: "30px",
+          },
+        },
+        [
+          React.createElement("li", {}, "Sachin"),
+          React.createElement("li", {}, "Dravid"),
+          React.createElement("li", {}, "Dhoni"),
+        ]
+      );
+      ReactDOM.render(containerOl, document.getElementById("root"));
+    </script>
+  </body>
+</html>
