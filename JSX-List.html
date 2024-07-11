@@ -6,11 +6,17 @@
     <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
   </head>
   <body>
-    <div id="root"></div>
+    <div id = "root"></div>
     <script type="text/babel">
-      var container = <h2>h2 JSX element</h2>;
-      var container1 = <button>JSX button</button>;
-      ReactDOM.render(container1, document.getElementById("root"));
+        var container = (
+        <ol type = "a">
+          <li>Apple</li>
+          <li>Banana</li>
+          <li>Mango</li>
+        </ol>
+      );
+      ReactDOM.render(container, document.getElementById("root"));
+    </script>
     </script>
   </body>
 </html>

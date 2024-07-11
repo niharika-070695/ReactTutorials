@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <style>
+      .card {
+        box-shadow: 0 0 10px green;
+        padding: 10px;
+        width: 270px;
+        height: 600px;
+      }
+      #cardContainer {
+        display: flex;
+        justify-content: space-evenly;
+      }
+    </style>
+    <script src="https://unpkg.com/react@18/umd/react.development.js"></script>
+    <script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+  </head>
+  <body>
+    <div id="root"></div>
+    <script type="text/babel">
+      var imageUrl =
+        "https://tse1.mm.bing.net/th?id=OIP.cNasTLXHBPbDVPJDZ2_AQwHaJh&pid=Api&P=0&h=180";
+      let card = (
+        <div class="card">
+          <img src={imageUrl} width="100%" height="50%" />
+          <h3>Sachin Tendulkar</h3>
+          <p>
+            is an Indian former international cricketer who captained the Indian
+            national team. He is widely regarded as one of the greatest batsmen
+            in the history of cricket.Hailed as the world's most prolific
+            batsman of all time, he is the all-time highest run-scorer in both
+            ODI and Test cricket with more than 18,000 runs and 15,000 runs,
+            respectively.
+          </p>
+          <button>Profile Details</button>
+        </div>
+      );
+      let container = (
+        <div id="cardContainer">
+          {card}
+          {card}
+          {card}
+          {card}
+        </div>
+      );
+      ReactDOM.render(container, document.getElementById("root"));
+    </script>
+  </body>
+</html>

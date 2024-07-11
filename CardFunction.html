@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <style>
+      .card {
+        box-shadow: 0 0 10px green;
+        padding: 10px;
+        width: 270px;
+        height: 600px;
+      }
+      #cardContainer {
+        display: flex;
+        justify-content: space-evenly;
+      }
+    </style>
+    <script src="https://unpkg.com/react@18/umd/react.development.js"></script>
+    <script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+  </head>
+  <body>
+    <div id="root"></div>
+    <script type="text/babel">
+      function createCard(imageUrl, name, description, age) {
+        return (
+          <div class="card">
+            <img src={imageUrl} width="100%" height="250" />
+            <h3>{name}</h3>
+            <p>From:{description}</p>
+            <p>Age: {age}</p>
+            <button>Profile Details</button>
+          </div>
+        );
+      }
+      function createMultipleCards() {
+        return (
+          <div id="cardContainer">
+            {createCard(
+              "https://tse1.mm.bing.net/th?id=OIP.cNasTLXHBPbDVPJDZ2_AQwHaJh&pid=Api&P=0&h=180",
+              "Sachin Tendulkar",
+              "Mumbai",
+              "51"
+            )}
+            {createCard(
+              "https://tse1.mm.bing.net/th?id=OIP.rQh7oc0v5viu8qSE7IZaKAHaJk&pid=Api&rs=1&c=1&qlt=95&h=180",
+              "Rahul Dravid",
+              "Bangalore",
+              "51"
+            )}
+            {createCard(
+              "https://tse3.mm.bing.net/th?id=OIP.H9LvWvNK_ElMIsQtrEG2DAAAAA&pid=Api&P=0&h=180",
+              "Saurav Ganguly",
+              "West Bengal",
+              "52"
+            )}
+            {createCard(
+              "https://cdn.britannica.com/25/222725-050-170F622A/Indian-cricketer-Mahendra-Singh-Dhoni-2011.jpg",
+              "MS Dhoni",
+              "Jharkhand",
+              "43"
+            )}
+          </div>
+        );
+      }
+      ReactDOM.render(createMultipleCards(), document.getElementById("root"));
+    </script>
+  </body>
+</html>

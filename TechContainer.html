@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <style>
+      #container {
+        box-shadow: 0 0 10px red;
+        margin-bottom: 30px;
+        padding: 10px;
+        width: 1200px;
+        height: 200px;
+      }
+    </style>
+    <script src="https://unpkg.com/react@18/umd/react.development.js"></script>
+    <script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+  </head>
+  <body>
+    <div id="coreelement"></div>
+    <script type="text/babel">
+      function createContainer(title, desc) {
+        return (
+          <div id="container">
+            <h2>{title}</h2>
+            <p>{desc}</p>
+            <button>More Details</button>
+          </div>
+        );
+      }
+      function MultipleContainer() {
+        var desc1 =
+          "Switzerland originates from the Old Swiss Confederacy established in the Late Middle Ages, following a series of military successes against Austria and Burgundy; the Federal Charter of 1291 is considered the country's founding document. Swiss independence from the Holy Roman Empire was formally recognised in the Peace of Westphalia in 1648. Switzerland has maintained a policy of armed neutrality since the 16th century and has not fought an international war since 1815. It joined the United Nations only in 2002 but pursues an active foreign policy that includes frequent involvement in peace building.";
+        var desc2 =
+          "Italy was home to numerous peoples; the Latin city of Rome, founded as a Kingdom, became a Republic that conquered the Mediterranean world and ruled it for centuries as an Empire. With the spread of Christianity, Rome became the seat of the Catholic Church and the Papacy. During the Early Middle Ages, Italy experienced the fall of the Western Roman Empire and inward migration from Germanic tribes. By the 11th century, Italian city-states and maritime republics expanded, bringing renewed prosperity through commerce and laying the groundwork for modern capitalism.";
+        var desc3 =
+          "Bangkok traces its roots to a small trading post during the Ayutthaya Kingdom in the 15th century, which eventually grew and became the site of two capital cities, Thonburi in 1767 and Rattanakosin in 1782. Bangkok was at the heart of the modernization of Siam, later renamed Thailand, during the late-19th century, as the country faced pressures from the West. The city was at the centre of Thailand's political struggles throughout the 20th century, as the country abolished absolute monarchy, adopted constitutional rule, and underwent numerous coups and several uprisings. The city, incorporated as a special administrative area under the Bangkok Metropolitan Administration in 1972, grew rapidly during the 1960s through the 1980s and now exerts a significant impact on Thailand's politics, economy, education, media and modern society.";
+        return (
+          <div>
+            {createContainer("Switzerland", desc1)}
+            {createContainer("Italy", desc2)}
+            {createContainer("Bangkok", desc3)}
+          </div>
+        );
+      }
+      ReactDOM.render(
+        <MultipleContainer />,
+        document.getElementById("coreelement")
+      );
+    </script>
+  </body>
+</html>

@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <link rel="stylesheet" href="Home.css" />
+    <script src="https://unpkg.com/react@18/umd/react.development.js"></script>
+    <script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+  </head>
+  <body>
+    <div id="root"></div>
+    <script type="text/babel">
+      function CreateCard(props) {
+        return (
+          <div class="card">
+            <img src={props.imageUrl} width="100%" height="250" />
+            <h3>{props.title}</h3>
+            <p>From:{props.city}</p>
+            <p>Age: {props.age}</p>
+            <button>Profile Details</button>
+          </div>
+        );
+      }
+      function FooterCard() {
+        return (
+          <div class="footercard">
+            <img
+              src="https://e1.pxfuel.com/desktop-wallpaper/252/1000/desktop-wallpaper-brisbane-test-on-after-bcci-bcci-logo.jpg"
+              width="80%"
+              height="120"
+            />
+          </div>
+        );
+      }
+      function Header() {
+        return (
+          <div class="header flexContainer">
+            <h2>INDIAN CRICKETERS</h2>
+          </div>
+        );
+      }
+      function Main() {
+        return (
+          <div class="main cardContainer">
+            <CreateCard
+              title="Sachin Tendulkar"
+              imageUrl="https://tse1.mm.bing.net/th?id=OIP.cNasTLXHBPbDVPJDZ2_AQwHaJh&pid=Api&P=0&h=180"
+              age="51"
+              city="Mumbai"
+            />
+            <CreateCard
+              title="Rahul Dravid"
+              imageUrl="https://tse1.mm.bing.net/th?id=OIP.rQh7oc0v5viu8qSE7IZaKAHaJk&pid=Api&rs=1&c=1&qlt=95&h=180"
+              age="51"
+              city="Bangalore"
+            />
+            <CreateCard
+              title="Saurav Ganguly"
+              imageUrl="https://tse3.mm.bing.net/th?id=OIP.H9LvWvNK_ElMIsQtrEG2DAAAAA&pid=Api&P=0&h=180"
+              age="52"
+              city="Calcutta"
+            />
+            <CreateCard
+              title="MS Dhoni"
+              imageUrl="https://cdn.britannica.com/25/222725-050-170F622A/Indian-cricketer-Mahendra-Singh-Dhoni-2011.jpg"
+              age="43"
+              city="Ranchi"
+            />
+          </div>
+        );
+      }
+
+      function Footer() {
+        return (
+          <div class="footer cardContainer">
+            <FooterCard />
+          </div>
+        );
+      }
+      function App() {
+        return (
+          <div>
+            <Header />
+            <Main />
+            <Footer />
+          </div>
+        );
+      }
+      ReactDOM.render(<App />, document.getElementById("root"));
+    </script>
+  </body>
+</html>
